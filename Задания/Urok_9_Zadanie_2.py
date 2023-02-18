@@ -1,0 +1,5 @@
+l1 = list(map(int, input().split()))
+l2 = list(map(int, input().split()))
+print(l1)
+print(l2)
+print(len(l1) + len(l2))

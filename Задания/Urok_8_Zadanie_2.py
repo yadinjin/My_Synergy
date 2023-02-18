@@ -1,0 +1,5 @@
+res = list(map(int, input().split()))
+print(res)
+res.insert(0, res[-1])
+res.pop()
+print(res)
