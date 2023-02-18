@@ -13,8 +13,7 @@ CELL_TYPES = "🟩🌲🌊🏥🔧🔥"
 
 TREE_BONUS = 100
 UPGRADE_COST = 500
-# TODO: make 10k
-LIFE_COST = 1000
+LIFE_COST = 10000
 
 class Map:
     def __init__(self, w, h):
@@ -88,7 +87,6 @@ class Map:
         cx, cy = c[0], c[1]
         if self.cells[cx][cy] == 1:
             self.cells[cx][cy] = 5
-    
     def update_fire(self):
         for ri in range(self.h):
             for ci in range(self.w):
@@ -97,6 +95,7 @@ class Map:
                     self.cells[ri][ci] = 0
         for i in range(10):
             self.add_fire()
+     
             
     def process_helicopter(self, helico, clouds):
         c = self.cells[helico.x][helico.y]
@@ -117,6 +116,12 @@ class Map:
             helico.lives -= 1
             if (helico.lives == 0):
                 helico.game_over()
+                
+    def export_data(self):
+        return {"cells": self.cells}       
+    
+    def import_data(self, data):
+        self.cells = data["cells"] or [[0 for i in range(self.w)] for j in range(self.h)]     
   
         
             
