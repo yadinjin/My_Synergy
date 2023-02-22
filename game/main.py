@@ -53,7 +53,7 @@ def process_key(key):
         
         
 listener = keyboard.Listener(
-    #on_press=None,
+    on_press=None,
     on_release=process_key,)
 listener.start()
             
