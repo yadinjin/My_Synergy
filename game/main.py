@@ -46,13 +46,14 @@ def process_key(key):
             helico.import_data(data["helicopter"])
             field.import_data(data["field"])
             clouds.import_data(data["clouds"])
+ 
             
         
         
         
         
 listener = keyboard.Listener(
-    on_press=None,
+    #on_press=None,
     on_release=process_key,)
 listener.start()
             
